@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>太平洋岛国</title>
+		<link rel="stylesheet" href="layui/css/layui.css" media="all">
+		<link rel="stylesheet" href="css/common.css" media="all">
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+				<div class="logo-cont">
+					<img src="imgs/logo.png"/>
+					<form class="layui-form right" action="">
+						<div class="search2">
+							<div class="select">
+								<select name="type" lay-verify="required">
+									<option value="0">标题</option>
+									<option value="1">文章</option>
+									<option value="2">图片</option>
+									<option value="2">视频</option>
+								</select>
+							</div>
+							<div class="cont-input">
+								<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+	
+							</div>
+							<div class="btn">
+								<a class="">立即搜索</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="header-nav">
+				<ul class="layui-nav" lay-filter="">
+					<li class="layui-nav-item layui-this">
+						<a href="javascript:;">首页</a>
+					</li>
+					<li class="layui-nav-item ">
+						<a href="javascript:;">中心概况</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">岛国资讯</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="javascript:;">新闻资讯</a>
+							</dd>
+							<dd >
+								<a class="communicat" href="javascript:;">学术通讯</a>
+								<ul class="child2-list">
+									<li>
+										<a href="javascript:;">太平洋岛国研究通讯</a>
+									</li>
+									<li>
+										<a href="javascript:;">大洋洲研究通讯</a>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">国情纵览</a>
+						<dl class="layui-nav-child">
+						    <dd><a href="">巴布亚新几内亚</a></dd>
+						    <dd><a href="">斐济</a></dd>
+						    <dd><a href="">瓦努阿图</a></dd>
+						    <dd><a href="">萨摩亚</a></dd>
+						    <dd><a href="">图瓦卢</a></dd>
+						    <dd><a href="">所罗门群岛</a></dd>
+						    <dd><a href="">马绍尔群岛</a></dd>
+						    <dd><a href="">密克罗尼西亚</a></dd>
+						    <dd><a href="">基里巴斯</a></dd>
+						    <dd><a href="">汤加</a></dd>
+						    <dd><a href="">纽埃</a></dd>
+						    <dd><a href="">帕劳</a></dd>
+						    <dd><a href="">瑙鲁</a></dd>
+						    <dd><a href="">库克群岛</a></dd>
+					    </dl>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">专题研究</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">学界信息</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="">会议预告</a>
+							</dd>
+							<dd>
+								<a href="">专家学者</a>
+							</dd>
+							<dd>
+								<a href="">研究机构</a>
+							</dd>
+						</dl>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">研究文献</a>
+					</li>
+					<li class="right lg">
+						<div class="lg-pre">
+							<a class="person"></a><a class="loging">登录</a>
+						</div>
+						<div class="lg-in"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--
+        	作者：18210691563@163.com
+        	时间：2017-07-26
+        	描述：个人中心---我的收藏
+        -->
+		<div class="main">
+			<div class="breadcrumb">
+				当前位置：<span class="layui-breadcrumb"><a href="">个人中心</a><a href="">检索记录</a></span>
+			</div>		
+			<div class="xjxx layui-clear">
+				<div class="xjxx-left left">
+					<div class="xjxx-title">
+						个人中心
+					</div>
+					<div class="nav-iterm person-iterm">
+						<a class="active">我的收藏</a>
+						<a >下载记录</a>
+						<a >检索记录</a>
+						<a >浏览记录</a>
+					</div>
+				</div>
+				<div class="xjxx-right right">
+					<div class="xjxx-list-title">
+						<span>我的收藏</span>
+						
+					</div>
+					
+					<div class="xjxx-list">
+						<div class="person-center">
+							<div class="batch-del">
+								已选中<span>4</span>条记录<button class="layui-btn layui-btn-primary ">删除</button>
+							</div>
+							<table class="layui-table person-table" lay-skin="line">
+							  	<colgroup>
+								    <col width="100">
+								    <col>
+								    <col>
+								    <col>
+								    <col>
+								    <col width="100">
+							  	</colgroup>
+							  	<thead>
+								    <tr>
+									    <th >编号</th>
+									    <th>标题</th>
+									    <th>类型</th>
+									    <th>来源</th>
+									    <th>收藏时间</th>
+									    <th>操作</th>
+								    </tr> 
+							  	</thead>
+							  	<tbody>
+								    <tr>
+								      	<td>22</td>
+								      	<td>人生</td>
+								      	<td>图片</td>
+								      	<td>知网</td>
+								      	<td>2016-11-29</td>
+								      	<td><a>删除</a></td>
+								    </tr>
+								    <tr>
+								      	<td>22</td>
+								      	<td>人生</td>
+								      	<td>图片</td>
+								      	<td>知网</td>
+								      	<td>2016-11-29</td>
+								      	<td><a>删除</a></td>
+								    </tr>
+								    <tr>
+								      	<td>22</td>
+								      	<td>人生</td>
+								      	<td>图片</td>
+								      	<td>知网</td>
+								      	<td>2016-11-29</td>
+								      	<td><a>删除</a></td>
+								    </tr>
+								    <tr>
+								      	<td>22</td>
+								      	<td>人生</td>
+								      	<td>图片</td>
+								      	<td>知网</td>
+								      	<td>2016-11-29</td>
+								      	<td><a>删除</a></td>
+								    </tr>
+							  	</tbody>
+							</table>
+						</div>
+						<div class="page ">
+							<div id="page-list"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="layui/layui.js"></script>
+	<script>
+		layui.use(['jquery','element', 'laypage', 'layer','form','laydate'], function() {
+			var $ = layui.jquery,
+				laypage = layui.laypage,
+				layer = layui.layer,
+				laydate = layui.laydate,
+				form = layui.form(),
+				element = layui.element();
+				
+			$('.xjxx-left .nav-iterm a').bind('click',function(e){
+				var elem = e.target;
+				$('.xjxx-left .nav-iterm a').removeClass('active');
+				$(elem).addClass('active');
+			});
+			
+			$('.search .cont-input input').focus(function(e){
+				$(e.target).parents('.search2').addClass('active');
+			}).blur(function(e){
+				$(e.target).parents('.search2').removeClass('active');
+			});
+			
+			$('.log-type ul li a').bind('click', function(e) {
+				var elem = e.target;
+				$('.log-type ul li a').removeClass('active');
+				$(elem).addClass('active');
+			});
+			
+			$('.log-type .date input').bind('click', function(e) {
+				var elem = e.target;
+				layui.laydate({
+					elem: elem,
+					min: '1900-01-01 00:00:00',
+					max: laydate.now(),
+					choose: function(dates){ //选择好日期的回调
+	 					//console.log(dates)
+	  				}
+				})	
+			});
+			var countInput = $(".person-table tbody td input:checkbox").length; 
+			$(".person-table thead input:checkbox").click(function(){   
+			    if(this.checked){
+			    	reversNum(countInput);
+			        $(".person-table tbody td input:checkbox").prop("checked", true);  
+			    }else{ 
+			    	$('.person-center .batch-del').hide();
+					$(".person-table tbody td input:checkbox").prop("checked", false);
+			    }   
+			});
+			
+			$(".person-table tbody td input:checkbox").on('click',function(e){
+				calculat();
+			});
+			function calculat(){
+				var count = $(".person-table tbody td input:checkbox:checked").length;
+				if(count==0){
+					$('.person-center .batch-del').hide();
+				}else{
+					if(count==countInput){
+						$(".person-table thead input:checkbox").prop("checked", true); 
+					}else{
+						$(".person-table thead input:checkbox").prop("checked", false);
+					}
+					reversNum(count);
+				}
+			}
+			function reversNum(count){
+				$('.person-center .batch-del').show();
+			    $('.person-center .batch-del span').text(count);
+			}
+			
+			//页码
+			laypage({
+				cont: 'page-list',
+				pages: 100, //总页数
+				curr: 1,
+				skin: '#00a0e9',
+				skip: true,
+				first: false,
+				last: false,
+				jump: function(obj, first) {//页码跳转
+					if(!first) {
+						//layer.msg('第 '+ obj.curr +' 页');
+					}
+				}
+			});
+		})
+	</script>
+</html>

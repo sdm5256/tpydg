@@ -1,0 +1,699 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>太平洋岛国</title>
+	<link rel="stylesheet" href="layui/css/layui.css" media="all">
+	<link rel="stylesheet" href="css/common.css" media="all">
+	<script src="js/jquery1.42.min.js"></script>
+	<script src="js/jquery.SuperSlide.2.1.1.js"></script>
+	<style type="text/css">
+		.picScroll-left {
+			width: 890px;
+			height: 300px;
+			overflow: hidden;
+			position: relative;
+		}
+		
+		.picScroll-left .hd {
+			overflow: hidden;
+			height: 30px;
+			padding: 0 10px;
+			position: absolute;
+			bottom: 0px;
+			left: 400px;
+			z-index: 99;
+			width: 100px;
+		}
+		
+		.picScroll-left .hd ul {
+			float: right;
+			zoom: 1;
+			margin-top: 10px;
+			zoom: 1;
+			height: 300px;
+			overflow: hidden;
+		}
+		
+		.picScroll-left .hd ul li {
+			float: left;
+			width: 9px;
+			height: 9px;
+			overflow: hidden;
+			text-indent: -999px;
+			cursor: pointer;
+			background: url("imgs/circle1.png") no-repeat;
+		}
+		
+		.picScroll-left .hd ul li.on {
+			background: url("imgs/circle2.png") no-repeat;
+		}
+		
+		.picScroll-left .bd ul {
+			overflow: hidden;
+			zoom: 1;
+		}
+		
+		.picScroll-left .bd ul li {
+			position: relative;
+			margin: 0 8px;
+			float: left;
+			_display: inline;
+			overflow: hidden;
+		}
+		
+		.picScroll-left .bd ul li .pic {
+			/*width: 874px;*/
+			background: #f9f9f9;
+		}
+		.picScroll-left .bd ul li .pic a{
+			cursor: pointer;
+		}
+		.iterm1{
+			position: relative;
+		}
+		.news-msg {
+			position: absolute;
+			top: 15px;
+			right: 0px;
+			width: 330px;
+		}
+		
+		.news-msg .news-list {
+			padding: 0 15px;
+		}
+		
+		.news-list .news-title {
+			font-size: 18px;
+		}
+		
+		.news-list p {
+			margin-top: 10px;
+			line-height: 22px;
+		}
+		
+		.news-list p>a {
+			display: block;
+			color: #999;
+		}
+		
+		.news-list p>a:hover {
+			color: #00a0e8;
+			cursor: pointer;
+		}
+		
+		.news-iterm {
+			margin-top: 10px;
+		}
+		
+		.more {
+			text-align: right;
+		}
+		
+		.news-iterm a {
+			display: block;
+			width: 300px;
+			color: #666;
+			cursor: pointer;
+			overflow: hidden;
+			-ms-text-overflow: ellipsis;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+		
+		.news-iterm a:hover {
+			color: #00a0e8;
+		}
+		
+		.picScroll-left .bd ul li .pic img {
+			width: 540px;
+			height: 300px;
+			display: block;
+		}
+		
+		.picScroll-left .bd ul li .title {
+			position: absolute;
+			bottom: 0px;
+			left: 0px;
+			width: 510px;
+			color: #fff;
+			padding-left: 30px;
+			height: 30px;
+			line-height: 30px;
+			background: -webkit-linear-gradient(left,rgba(0,0,0,.3),rgba(0,0,0,0)); /* Safari 5.1 - 6.0 */
+			background: -o-linear-gradient(right,rgba(0,0,0,.3),rgba(0,0,0,0)); /* Opera 11.1 - 12.0 */
+			background: -moz-linear-gradient(right, rgba(0,0,0,.3),rgba(0,0,0,0)); /* Firefox 3.6 - 15 */
+			background: linear-gradient(to right,rgba(0,0,0,.3),rgba(0,0,0,0)); /* 标准的语法 */
+		}
+		
+		.title a {
+			color: #fff;
+		}
+		.layui-layer .layui-layer-setwin{
+	        /*display: none;*/
+	    } 
+	</style>
+</head>
+
+<body>
+	<div class="header">
+		<div class="logo">
+			<div class="logo-cont">
+				<img src="imgs/logo.png" />
+				<form class="layui-form right" action="">
+					<div class="search2">
+						<div class="select">
+							<select name="type" lay-verify="required">
+								<option value="0">标题</option>
+								<option value="1">文章</option>
+								<option value="2">图片</option>
+								<option value="2">视频</option>
+							</select>
+						</div>
+						<div class="cont-input">
+							<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+
+						</div>
+						<div class="btn">
+							<a class="">立即搜索</a>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="header-nav">
+			<ul class="layui-nav" lay-filter="">
+				<li class="layui-nav-item layui-this">
+					<a href="javascript:;">首页</a>
+				</li>
+				<li class="layui-nav-item ">
+					<a href="javascript:;">中心概况</a>
+				</li>
+				<li class="layui-nav-item">
+					<a href="">岛国资讯</a>
+					<dl class="layui-nav-child">
+						<dd>
+							<a href="javascript:;">新闻资讯</a>
+						</dd>
+						<dd>
+							<a class="communicat" href="javascript:;">学术通讯</a>
+							<ul class="child2-list">
+								<li>
+									<a href="javascript:;">太平洋岛国研究通讯</a>
+								</li>
+								<li>
+									<a href="javascript:;">大洋洲研究通讯</a>
+								</li>
+							</ul>
+						</dd>
+					</dl>
+				</li>
+				<li class="layui-nav-item">
+					<a href="javascript:;">国情纵览</a>
+					<dl class="layui-nav-child">
+					    <dd><a href="">巴布亚新几内亚</a></dd>
+					    <dd><a href="">斐济</a></dd>
+					    <dd><a href="">瓦努阿图</a></dd>
+					    <dd><a href="">萨摩亚</a></dd>
+					    <dd><a href="">图瓦卢</a></dd>
+					    <dd><a href="">所罗门群岛</a></dd>
+					    <dd><a href="">马绍尔群岛</a></dd>
+					    <dd><a href="">密克罗尼西亚</a></dd>
+					    <dd><a href="">基里巴斯</a></dd>
+					    <dd><a href="">汤加</a></dd>
+					    <dd><a href="">纽埃</a></dd>
+					    <dd><a href="">帕劳</a></dd>
+					    <dd><a href="">瑙鲁</a></dd>
+					    <dd><a href="">库克群岛</a></dd>
+				    </dl>
+				</li>
+				<li class="layui-nav-item">
+					<a href="javascript:;">专题研究</a>
+				</li>
+				<li class="layui-nav-item">
+					<a href="javascript:;">学界信息</a>
+					<dl class="layui-nav-child">
+						<dd>
+							<a href="">会议预告</a>
+						</dd>
+						<dd>
+							<a href="">专家学者</a>
+						</dd>
+						<dd>
+							<a href="">研究机构</a>
+						</dd>
+					</dl>
+				</li>
+				<li class="layui-nav-item">
+					<a href="javascript:;">研究文献</a>
+				</li>
+				<li class="right lg">
+					<div class="lg-pre">
+						<a class="person"></a>
+						<a id="lg-text" class="loging">登录</a>
+					</div>
+					<div class="lg-pre lg-out hide">
+						<a class="person"></a>
+						<a id="lg-text" class="loging">登录</a><span>|</span><a class="out">退出</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--
+        	作者：18210691563@163.com
+        	时间：2017-07-26
+        	描述：首页
+        -->
+	<div class="index">
+		<div class="hiden"></div>
+		<div class="index-main">
+			<div class="index-left">
+				<h5><img src="imgs/dgzx.png"/></h5>
+				<div class="iterm1">
+					<div class="picScroll-left">
+						<div class="hd">
+							<ul></ul>
+						</div>
+						<div class="bd">
+							<ul class="picList">
+								<li>
+									<div class="pic">
+										<a target="_blank"><img src="imgs/news1.png" /></a>
+									</div>
+									<div class="title">
+										<a target="_blank">效果图1</a>
+									</div>	
+								</li>
+								<li>
+									<div class="pic">
+										<a target="_blank"><img src="imgs/news1.png" /></a>
+
+									</div>
+									<div class="title">
+										<a target="_blank">效果图2</a>
+									</div>
+								</li>
+								<li>
+									<div class="pic">
+										<a target="_blank"><img src="imgs/news1.png" /></a>
+									</div>
+									<div class="title">
+										<a target="_blank">效果图3</a>
+									</div>
+									
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="news-msg">
+						<div class="news-list">
+							<div class="news-title">
+								北京师范大学留给考察哦太平洋岛国调查研究
+							</div>
+							<p><a>北京师范大学留给考察哦太平洋岛国调查研究北京师范大学留给考察哦太平洋岛国调查研究北京师范大学留给考察哦太平洋岛国调查研究北京师范大学留给考察哦太平洋岛国调查研究</a></p>
+							<div class="news-iterm"><a>北京师范大学留给考察哦太平洋岛国调查研究洋岛国调查研究</a></div>
+							<div class="news-iterm"><a>北京师范大学留给考察哦太平洋岛国调查研究洋岛国调查研究</a></div>
+							<div class="news-iterm"><a>北京师范大学留给考察哦太平洋岛国调查研究洋岛国调查研究</a></div>
+							<div class="news-iterm more"><a>查看更多</a></div>
+						</div>	
+					</div>
+				</div>
+				<h5><img src="imgs/ztyj.png"/></h5>
+				<div class="iterm2 study">
+					<div class="layui-tab layui-tab-brief" lay-filter="TabBrief">
+					  	<ul class="layui-tab-title">
+						    <li class="layui-this">历史文化</li>
+						    <li>政情政治</li>
+						    <li>国际援助</li>
+						    <li>经贸旅游</li>
+						    <li>渔业合作</li>
+						    <li>环境保护</li>
+						    <li>区域合作</li>
+						    <li>对外关系</li>
+					 	</ul>
+					  	<div class="layui-tab-content" >
+						    <div class="layui-tab-item layui-show">
+						    	<ul class="list-left">
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    	</ul>
+						    	<ul class="list-right">
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li class="more"><a>查看更多</a></li>
+						    	</ul>
+						    </div>
+						    <div class="layui-tab-item">
+						    	<ul class="list-left">
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    	</ul>
+						    	<ul class="list-right">
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li class="more"><a>查看更多</a></li>
+						    	</ul>
+						    </div>
+						    <div class="layui-tab-item">内容3</div>
+						    <div class="layui-tab-item">内容4</div>
+						    <div class="layui-tab-item">内容5</div>
+					  	</div>
+					</div> 
+				</div>
+				<h5><img src="imgs/gqzl.png"/></h5>
+				<div class="iterm3">
+					<ul>
+						<li>
+							<a>
+								<div id="">
+									<img src="imgs/coutry1.png"/>
+									<p>巴布新几内亚</p>
+								</div>
+								
+							</a>
+						</li>
+						<li>
+							<a>
+								<img src="imgs/coutry14.png"/>
+								<p>斐济</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<img src="imgs/coutry2.png"/>
+								<p>基里巴斯</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<img src="imgs/coutry3.png"/>
+								<p>库克群岛</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<img src="imgs/coutry4.png"/>
+								<p>马绍尔群岛</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<img src="imgs/coutry5.png"/>
+								<p>密克罗尼西亚</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<img src="imgs/coutry13.png"/>
+								<p>瑙鲁</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<img src="imgs/coutry6.png"/>
+								<p>纽埃</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<img src="imgs/coutry7.png"/>
+								<p>帕劳</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<img src="imgs/coutry8.png"/>
+								<p>萨摩亚</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<img src="imgs/coutry9.png"/>
+								<p>所罗门群岛</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<img src="imgs/coutry10.png"/>
+								<p>汤加</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<img src="imgs/coutry11.png"/>
+								<p>图瓦卢</p>
+							</a>
+						</li>
+						<li>
+							<a>
+								<img src="imgs/coutry12.png"/>
+								<p>瓦努阿图</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<h5><img src="imgs/xjzx.png"/></h5>
+				<div class="iterm2">
+					<div class="layui-tab layui-tab-brief" lay-filter="TabBrief">
+					  	<ul class="layui-tab-title">
+						    <li class="layui-this">会议预告</li>
+						    <li>专家学者</li>
+						    <li>研究机构</li>
+					 	</ul>
+					  	<div class="layui-tab-content" >
+						    <div class="layui-tab-item ">
+						    	<ul class="list-left">
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    	</ul>
+						    	<ul class="list-right">
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li class="more"><a>查看更多</a></li>
+						    	</ul>
+						    </div>
+						    <div class="layui-tab-item layui-show">
+						    	<div class="expert">
+						    		<ul>
+						    			<li>
+						    				<a>
+						    					<img src="imgs/author.png"/>
+						    					<div class="right introd">
+						    						<span class="name">着打印</span>
+						    						<p>政情政治政情政治政情政治政情政治政情政治政情政治政情政治政情政治政情政治政情政治</p>
+						    					</div>
+						    				</a>
+						    			</li>
+						    			<li>
+						    				<a>
+						    					<img src="imgs/author.png"/>
+						    					<div class="right introd">
+						    						<span class="name">着打印</span>
+						    						<p>政情政治政情政治政情政治政情政治政情政治政情政治政情政治政情政治政情政治政情政治</p>
+						    					</div>
+						    				</a>
+						    			</li>
+						    			<li>
+						    				<a>
+						    					<img src="imgs/author.png"/>
+						    					<div class="right introd">
+						    						<span class="name">着打印</span>
+						    						<p>政情政治政情政治政情政治政情政治政情政治政情政治政情政治政情政治政情政治政情政治</p>
+						    					</div>
+						    				</a>
+						    			</li>
+						    			<li>
+						    				<a>
+						    					<img src="imgs/author.png"/>
+						    					<div class="right introd">
+						    						<span class="name">着打印</span>
+						    						<p>政情政治政情政治政情政治政情政治政情政治政情政治政情政治政情政治政情政治政情政治</p>
+						    					</div>
+						    				</a>
+						    			</li>
+						    		</ul>
+						    	</div>
+						    </div>
+						    <div class="layui-tab-item">
+						    	<ul class="list-left">
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    	</ul>
+						    	<ul class="list-right">
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li><a>政情政治政情政治政情政治政情政治政情政治</a></li>
+						    		<li class="more"><a>查看更多</a></li>
+						    	</ul>
+						    </div>
+					  	</div>
+					</div> 
+				</div>
+				
+			</div>
+			<div class="index-right right">
+				<div class="title">
+					学术通讯
+				</div>
+				<div class="list-title">
+					太平洋岛国研究 <a class="right">更多</a>
+				</div>
+				<ul class="lists">
+					<li>
+						<a class="iterm-title">太平洋岛国研究 专刊</a>
+						<div class="iterm-msg">
+							<img src="imgs/coutry1.png"/>
+						</div>
+					</li>
+					<li>
+						<a class="iterm-title">太平洋岛国研究 专刊</a>
+						<div class="iterm-msg">
+							<img src="imgs/coutry1.png"/>
+						</div>
+					</li>
+					<li>
+						<a class="iterm-title">太平洋岛国研究 专刊</a>
+						<div class="iterm-msg">
+							<img src="imgs/coutry1.png"/>
+						</div>
+					</li>
+					<li>
+						<a class="iterm-title">太平洋岛国研究 专刊</a>
+						<div class="iterm-msg">
+							<img src="imgs/coutry1.png"/>
+						</div>
+					</li>
+				</ul>
+				<div class="list-title">
+					太平洋岛国研究 <a class="right">更多</a>
+				</div>
+				<ul class="lists">
+					<li>
+						<a class="iterm-title">太平洋岛国研究 专刊</a>
+						<div class="iterm-msg">
+							<img src="imgs/coutry1.png"/>
+						</div>
+					</li>
+					<li>
+						<a class="iterm-title">太平洋岛国研究 专刊</a>
+						<div class="iterm-msg">
+							<img src="imgs/coutry1.png"/>
+						</div>
+					</li>
+					<li>
+						<a class="iterm-title">太平洋岛国研究 专刊</a>
+						<div class="iterm-msg">
+							<img src="imgs/coutry1.png"/>
+						</div>
+					</li>
+					<li>
+						<a class="iterm-title">太平洋岛国研究 专刊</a>
+						<div class="iterm-msg">
+							<img src="imgs/coutry1.png"/>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="mask-login" class="mask-login">
+		<div class="sign-in">
+			<div class="title">会员登录</div>
+			<form id="login-msg">
+				<ul>
+					<li><input type="text" name="account" placeholder="账号或用户名" ></li>
+					<li><input type="password" name="password"  placeholder="密码" ></li>
+					<li><input type="text" name="validateCode" placeholder="验证码" > <img src="imgs/code.png"/></li>
+					<li class="login-in"><button type="button">登录</button></li>
+				</ul>
+			</form>
+		</div>
+	</div>
+	<div class="footer">
+		<div class="contain">
+			<div class="list">
+				<a>数据库介绍</a><a>使用说明</a><a>关于我们</a><a>版权说明</a>
+			</div>
+			<p>Copyright © 聊城大学 All Rights Reserved</p>
+			<p>通讯地址：山东省聊城市聊城大学</p>
+		</div>
+	</div>
+</body>
+<script src="layui/layui.js"></script>
+<script>
+	layui.use(['element', 'laypage', 'layer', 'form', 'laydate'], function() {
+		var laypage = layui.laypage,
+			layer = layui.layer,
+			laydate = layui.laydate,
+			form = layui.form(),
+			element = layui.element();
+		jQuery(".picScroll-left").slide({
+			titCell: ".hd ul",
+			mainCell: ".bd ul",
+			autoPage: true,
+			effect: "left",
+			autoPlay: true,
+			vis: 1,
+			trigger: "click",
+			scroll: 1
+		});
+		jQuery(".lists").slide({
+				titCell: ".iterm-title",
+				targetCell: ".iterm-msg",
+				effect: "slideDown",
+				delayTime: 300,
+				returnDefault: true,
+				easing: "swing"
+		});
+		//打开登录弹窗
+		$('#lg-text').bind('click',function(e){
+			layer.open({
+				title :'',
+				type: 1,
+				area:  ['420px', '380px'],
+				content: $('#mask-login')
+			});
+		});
+		//登录信息提交
+		$('.mask-login .login-in button').bind('click',function(){
+			
+			var datas = $('#login-msg').serializeArray();
+			var datasJson = {};
+			for(var i=0;i<datas.length;i++) {
+				datasJson[datas[i].name]= datas[i].value;
+			}
+			
+			$.ajax({
+             type: "POST",
+             url: "",
+             data: datasJson,
+             dataType: "json",
+             success: function(data){
+                    layer.closeAll(); //关闭弹窗
+                    $('#lg-text').text('vale');//显示账号名称
+                }
+         	});
+		});
+	})
+</script>
+
+</html>

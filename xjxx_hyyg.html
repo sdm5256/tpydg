@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>太平洋岛国</title>
+		<link rel="stylesheet" href="layui/css/layui.css" media="all">
+		<link rel="stylesheet" href="css/common.css" media="all">
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+				<div class="logo-cont">
+					<img src="imgs/logo.png"/>
+					<form class="layui-form right" action="">
+						<div class="search2">
+							<div class="select">
+								<select name="type" lay-verify="required">
+									<option value="0">标题</option>
+									<option value="1">文章</option>
+									<option value="2">图片</option>
+									<option value="2">视频</option>
+								</select>
+							</div>
+							<div class="cont-input">
+								<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+	
+							</div>
+							<div class="btn">
+								<a class="">立即搜索</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="header-nav">
+				<ul class="layui-nav" lay-filter="">
+					<li class="layui-nav-item layui-this">
+						<a href="javascript:;">首页</a>
+					</li>
+					<li class="layui-nav-item ">
+						<a href="javascript:;">中心概况</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">岛国资讯</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="javascript:;">新闻资讯</a>
+							</dd>
+							<dd >
+								<a class="communicat" href="javascript:;">学术通讯</a>
+								<ul class="child2-list">
+									<li>
+										<a href="javascript:;">太平洋岛国研究通讯</a>
+									</li>
+									<li>
+										<a href="javascript:;">大洋洲研究通讯</a>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">国情纵览</a>
+						<dl class="layui-nav-child">
+						    <dd><a href="">巴布亚新几内亚</a></dd>
+						    <dd><a href="">斐济</a></dd>
+						    <dd><a href="">瓦努阿图</a></dd>
+						    <dd><a href="">萨摩亚</a></dd>
+						    <dd><a href="">图瓦卢</a></dd>
+						    <dd><a href="">所罗门群岛</a></dd>
+						    <dd><a href="">马绍尔群岛</a></dd>
+						    <dd><a href="">密克罗尼西亚</a></dd>
+						    <dd><a href="">基里巴斯</a></dd>
+						    <dd><a href="">汤加</a></dd>
+						    <dd><a href="">纽埃</a></dd>
+						    <dd><a href="">帕劳</a></dd>
+						    <dd><a href="">瑙鲁</a></dd>
+						    <dd><a href="">库克群岛</a></dd>
+					    </dl>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">专题研究</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">学界信息</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="">会议预告</a>
+							</dd>
+							<dd>
+								<a href="">专家学者</a>
+							</dd>
+							<dd>
+								<a href="">研究机构</a>
+							</dd>
+						</dl>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">研究文献</a>
+					</li>
+					<li class="right lg">
+						<div class="lg-pre">
+							<a class="person"></a><a class="loging">登录</a>
+						</div>
+						<div class="lg-in"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--
+        	作者：18210691563@163.com
+        	时间：2017-07-26
+        	描述：学界信息---会议预告
+        -->
+		<div class="main">
+			<div class="breadcrumb">
+				当前位置：<span class="layui-breadcrumb"><a href="">学界信息</a><a href="">会议预告</a></span>
+			</div>
+		
+			<div class="xjxx layui-clear">
+				<div class="xjxx-left left">
+					<div class="xjxx-title">
+						学界信息
+					</div>
+					<div class="nav-iterm">
+						<a class="active">会议预告</a>
+					</div>
+					<div class="nav-iterm">
+						<a >学者信息</a>
+						<a >国内</a>
+						<a >国外</a>
+					</div>
+					<div class="nav-iterm">
+						<a >研究机构</a>
+						<a >国内</a>
+						<a >国外</a>
+					</div>
+				</div>
+				<div class="xjxx-right right">
+					<div class="xjxx-list-title">
+						<span>会议预告</span>
+						<form class="layui-form right search" action="">
+							<div class="search2">
+								<div class="select">
+									<select name="type" lay-verify="required">
+										<option value="0">标题</option>
+										<option value="1">文章</option>
+										<option value="2">图片</option>
+										<option value="2">视频</option>
+									</select>
+								</div>
+								<div class="cont-input">
+									<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+		
+								</div>
+								<div class="btn">
+									<a class="">搜索</a>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="xjxx-list">
+						<ul class="hyyg">
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							<li>
+								<a>会议预告会议预告会议预告会议预告</a>
+								<span class="right">2017-07-29</span>
+							</li>
+							
+						</ul>
+						<div class="page ">
+							<div id="page-list"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="layui/layui.js"></script>
+	<script>
+		layui.use(['jquery','element', 'laypage', 'layer','form','laydate'], function() {
+			var $ = layui.jquery,
+				laypage = layui.laypage,
+				layer = layui.layer,
+				laydate = layui.laydate,
+				form = layui.form(),
+				element = layui.element();
+				
+			$('.xjxx-left .nav-iterm a').bind('click',function(e){
+				var elem = e.target;
+				$('.xjxx-left .nav-iterm a').removeClass('active');
+				$(elem).addClass('active');
+			});
+			
+			$('.search .cont-input input').focus(function(e){
+				$(e.target).parents('.search2').addClass('active');
+			}).blur(function(e){
+				$(e.target).parents('.search2').removeClass('active');
+			});
+			//页码
+			laypage({
+				cont: 'page-list',
+				pages: 100, //总页数
+				skin: '#00a0e9',
+				skip: true,
+				first: false,
+				last: false,
+				jump: function(obj, first) {//页码跳转
+					if(!first) {
+						//layer.msg('第 '+ obj.curr +' 页');
+					}
+				}
+			});
+		})
+	</script>
+</html>

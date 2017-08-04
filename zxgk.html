@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>太平洋岛国</title>
+		<link rel="stylesheet" href="layui/css/layui.css" media="all">
+		<link rel="stylesheet" href="css/common.css" media="all">
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+				<div class="logo-cont">
+					<img src="imgs/logo.png"/>
+					<form class="layui-form right" action="">
+						<div class="search2">
+							<div class="select">
+								<select name="type" lay-verify="required">
+									<option value="0">标题</option>
+									<option value="1">文章</option>
+									<option value="2">图片</option>
+									<option value="2">视频</option>
+								</select>
+							</div>
+							<div class="cont-input">
+								<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+	
+							</div>
+							<div class="btn">
+								<a class="">立即搜索</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="header-nav">
+				<ul class="layui-nav" lay-filter="">
+					<li class="layui-nav-item layui-this">
+						<a href="javascript:;">首页</a>
+					</li>
+					<li class="layui-nav-item ">
+						<a href="javascript:;">中心概况</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">岛国资讯</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="javascript:;">新闻资讯</a>
+							</dd>
+							<dd >
+								<a class="communicat" href="javascript:;">学术通讯</a>
+								<ul class="child2-list">
+									<li>
+										<a href="javascript:;">太平洋岛国研究通讯</a>
+									</li>
+									<li>
+										<a href="javascript:;">大洋洲研究通讯</a>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">国情纵览</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">专题研究</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">学界信息</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="">会议预告</a>
+							</dd>
+							<dd>
+								<a href="">专家学者</a>
+							</dd>
+							<dd>
+								<a href="">研究机构</a>
+							</dd>
+						</dl>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">研究文献</a>
+					</li>
+					<li class="right lg">
+						<div class="lg-pre">
+							<a class="person"></a><a class="loging">登录</a>
+						</div>
+						<div class="lg-in"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="main">
+			<div class="breadcrumb">
+				当前位置：<span class="layui-breadcrumb"><a href="">中心概况</a></span>
+			</div>
+			<div class="content">
+				<div class="zxgk">
+					<h5>太平洋岛国研究中心</h5>
+					<p>他说，当前，中国与太平洋岛国关系呈现出蓬勃发展的势头，双方人员往来日益增多，互利合作不断扩大。去年中国与岛国贸易总额为8．38亿美元，同比增长58%。中国主要进口渔林产品，出口轻工、家电、纺织品等，中国许多产品和技术质优价廉，适应岛国国情和需要，在当地受到广泛欢迎。</p>
+					<p>刘结一说，中国根据太平洋岛国的要求和需要，提供了不附带任何政治条件的援助。中国选择项目时从当地国计民生出发，努力为受援国办好事、办实事，为当地经济和社会发展作力所能及的贡献。中国还积极参与区域合作，是太平洋岛国论坛的对话伙伴，已决定资助去年太平洋岛国论坛通过的“太平洋计划”。</p>
+					<p>他说，斐济是在太平洋岛国中具有重要影响的国家，也是第一个与中国建交的太平洋岛国（1975年建交）。近年来，中斐关系保持稳步发展的势头，两国高层交往和接触不断，双方合作领域不断扩大。去年中斐贸易额达4527万美元，比上一年增长16．9%。中国公民赴斐旅游去年5月正式启动。两国在农业、渔业、林业等领域的合作也有较大潜力。</p>
+					<p>刘结一说，应恩加拉塞总理邀请，温家宝总理就要对斐济进行正式访问，并将出席“中国━太平洋岛国经济发展合作论坛”首届部长级会议开幕式。这是中国总理首次对太平洋岛国进行正式访问，对促进中国与斐济以及其他太平洋岛国关系发展具有重要意义。</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="layui/layui.js"></script>
+	<script>
+		layui.use(['jquery','element', 'laypage', 'layer','form','laydate'], function() {
+			var $ = layui.jquery,
+				laypage = layui.laypage,
+				layer = layui.layer,
+				laydate = layui.laydate,
+				form = layui.form(),
+				element = layui.element();
+
+			$('.child2-list a').focus(function(e){
+				$(e.target).prev().show().addClass('active');
+			}).blur(function(e){
+				$(e.target).prev().removeClass('active');
+			});
+			form.on('submit(signUp)', function(data){
+			    console.log(JSON.stringify(data.field));
+			    return false;
+			});
+		})
+	</script>
+</html>

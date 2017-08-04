@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<title>太平洋岛国</title>
+		<link rel="stylesheet" href="layui/css/layui.css" media="all">
+		<link href="css/video-js.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="css/common.css" media="all">
+		<script src="js/videojs-ie8.min.js"></script>
+		<script src="js/video.min.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<div class="logo">
+				<div class="logo-cont">
+					<img src="imgs/logo.png"/>
+					<form class="layui-form right" action="">
+						<div class="search2">
+							<div class="select">
+								<select name="type" lay-verify="required">
+									<option value="0">标题</option>
+									<option value="1">文章</option>
+									<option value="2">图片</option>
+									<option value="2">视频</option>
+								</select>
+							</div>
+							<div class="cont-input">
+								<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">
+	
+							</div>
+							<div class="btn">
+								<a class="">立即搜索</a>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+			<div class="header-nav">
+				<ul class="layui-nav" lay-filter="">
+					<li class="layui-nav-item layui-this">
+						<a href="javascript:;">首页</a>
+					</li>
+					<li class="layui-nav-item ">
+						<a href="javascript:;">中心概况</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">岛国资讯</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="javascript:;">新闻资讯</a>
+							</dd>
+							<dd >
+								<a class="communicat" href="javascript:;">学术通讯</a>
+								<ul class="child2-list">
+									<li>
+										<a href="javascript:;">太平洋岛国研究通讯</a>
+									</li>
+									<li>
+										<a href="javascript:;">大洋洲研究通讯</a>
+									</li>
+								</ul>
+							</dd>
+						</dl>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">国情纵览</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">专题研究</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">学界信息</a>
+						<dl class="layui-nav-child">
+							<dd>
+								<a href="">会议预告</a>
+							</dd>
+							<dd>
+								<a href="">专家学者</a>
+							</dd>
+							<dd>
+								<a href="">研究机构</a>
+							</dd>
+						</dl>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">研究文献</a>
+					</li>
+					<li class="right lg">
+						<div class="lg-pre">
+							<a class="person"></a><a class="loging">登录</a>
+						</div>
+						<div class="lg-in"></div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!--
+        	作者：18210691563@163.com
+        	时间：2017-07-26
+        	描述：研究文献--视频试读
+        -->
+		<div class="main">
+			<div class="breadcrumb">
+				当前位置：<span class="layui-breadcrumb"><a href="">研究文献</a><a href="">视频试读</a></span>
+			</div>
+			<div class="content">
+				<div class="research-literature">
+					<div class="literature-title">
+						关于香港回归中英会谈备忘录
+					</div>
+					<div class="research-msg">
+						<ul>
+							<li>作者：潮水</li>
+							<li>所属国家：中国</li>
+							<li>时间：1997-3-20</li>
+							<li>简介：香港是一座高度繁荣的国际大都市，全境由香港岛、九龙半岛、新界等3大区域组成，管辖陆地总面积1104.32平方公里，截至2014年末，总人口约726.4万人，人口密度居全世界第三。</li>
+						</ul>	
+					</div>
+					<div class="video">
+						<video id="my-video" class="video-js" controls width="1120" height="580"
+						  poster="" data-setup="{}">
+							<source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+							<source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm">
+							<source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg">
+							<p class="vjs-no-js">
+							  该浏览器不支持视频在线试读，请先升级浏览器或下载观看
+							  <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+							</p>
+						</video>
+					</div>
+					<div class="btn-list">
+						<a>下载浏览</a><a>加入收藏</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="layui/layui.js"></script>
+	<script>
+		layui.use(['jquery','element', 'laypage', 'layer','form','laydate'], function() {
+			var $ = layui.jquery,
+				laypage = layui.laypage,
+				layer = layui.layer,
+				laydate = layui.laydate,
+				form = layui.form(),
+				element = layui.element();
+			var myPlayer = videojs('my-video',{
+				"autoplay": false
+			});
+			videojs("my-video").ready(function(){
+				var myPlayer = this;
+				//myPlayer.play();
+			});	
+			
+			
+		})
+	</script>
+</html>
